@@ -60,7 +60,7 @@ Foco nas alterações:
 
 ### ApplicationUser
 
-1. Agora atualize a entidade Data -> ApplicationUser, adicionando novas Propriedades para o usuário.
+1. Atualize a entidade Data -> ApplicationUser, adicionando novas Propriedades para o usuário.
 
    ```csharp
    using Microsoft.AspNetCore.Identity;
@@ -230,7 +230,7 @@ Foco nas alterações:
 1. Altere o Components -> Layout -> NavMenu.razor
 
    ```csharp
-   //Todo da pagina
+   // Topo da pagina
    @implements IDisposable
 
    @using BlazorCustomIdentity.Data
@@ -263,7 +263,7 @@ E após autenticar, o primeiro nome do usuário é exibido ao invés do Email.
 
 ## Edição de Perfil - adicionando novos campos para o usuário
 
-1. Altere a pagina Components -> Pages -> Account -> Manage -> Index.razor.
+1. Altere a página Components -> Pages -> Account -> Manage -> Index.razor.
 
    ```csharp
    // Adicione os campos no InputModel
@@ -303,7 +303,7 @@ E após autenticar, o primeiro nome do usuário é exibido ao invés do Email.
         Input.PhoneNumber ??= phoneNumber;
 
        // Obs: ao usar o operador de coalescência nula ??=, reduzimos linhas no código.
-       // Veja como seria sem ele cada verificação de propriedade e atribuição:
+       // Sem ele, seriam necessários vários IFs para verificação de propriedade e atribuição:
        // if (Input.FirstName is null)
        // {
        //   Input.FirstName = firstName;
@@ -464,11 +464,13 @@ Obs: Futuramente, pretendo aprimorar esse item.
                    <i class="bi bi-cloud-arrow-up-fill"></i> Carregar
                </label>
 
-               <InputFile class="custom-input-file" OnChange="OnChange" accept="image/png, image/jpeg, image/gif"
-                   id="inputFile" />
+               <InputFile class="custom-input-file"
+                    OnChange="OnChange" accept="image/png, image/jpeg, image/gif"
+                    id="inputFile" />
            </div>
 
-           <button type="submit" @onclick="OnClickUploadAsync" class="w-50 btn btn-lg btn-primary">Salvar</button>
+           <button type="submit"
+                @onclick="OnClickUploadAsync" class="w-50 btn btn-lg btn-primary">Salvar</button>
        </div>
    </div>
 
@@ -561,7 +563,7 @@ Components -> Account -> Shared -> ManageNavMenu.razor
     <li class="nav-item">
         <NavLink class="nav-link" href="Account/Manage" Match="NavLinkMatch.All">Profile</NavLink>
     </li>
-    // Crie um item abaixo do profile, com a rota pagina Photo
+    // Crie um item abaixo do profile, com a rota para página Photo
     <li class="nav-item">
         <NavLink class="nav-link" href="Account/Manage/Photo">Photo</NavLink>
     </li>
